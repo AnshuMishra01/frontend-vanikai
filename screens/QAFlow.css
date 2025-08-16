@@ -1,3 +1,74 @@
+@media (max-width: 700px) {
+  .qaflow-root {
+    width: 98vw;
+    max-width: 99vw;
+    margin: 24px auto 0 auto;
+    padding: 12px 1vw 20px 1vw;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #b3c0d81a;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .qaflow-root > *,
+  .qaflow-root input,
+  .qaflow-root textarea,
+  .qaflow-root button,
+  .qaflow-root label,
+  .qaflow-root .qaflow-label,
+  .qaflow-root .qaflow-definition,
+  .qaflow-root .qaflow-example,
+  .qaflow-root .qaflow-suggestions,
+  .qaflow-root .qaflow-actions {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .qaflow-root .qaflow-suggestion-btn {
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .qaflow-root .qaflow-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+  html, body {
+    overflow-x: hidden;
+  }
+  .qaflow-label {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .qaflow-definition, .qaflow-example, p, span, div {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .qaflow-btn {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
+  .qaflow-suggestion-btn {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+  .qaflow-textarea {
+    font-size: 1rem;
+    padding: 10px 8px;
+    min-height: 48px;
+  }
+  .qaflow-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
 /* QAFlow.css - Modern, clean, and engaging Q&A flow styles */
 
 .qaflow-root {

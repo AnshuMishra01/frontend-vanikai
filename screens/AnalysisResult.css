@@ -1,3 +1,45 @@
+@media (max-width: 700px) {
+  .analysis-root {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .analysis-title {
+    font-size: 1.1rem;
+    padding: 0 2vw;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .analysis-main-card {
+    width: 96vw;
+    max-width: 99vw;
+    margin: 24px auto 18px auto;
+    padding: 12px 2vw 18px 2vw;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #b3c0d81a;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+  .analysis-section-card {
+    padding: 10px 4px 10px 4px;
+    border-radius: 8px;
+    font-size: 0.97rem;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .analysis-content, .analysis-content h3, .analysis-content h4, .analysis-content h5, .analysis-content p, .analysis-content ul, .analysis-content ol, .analysis-content code {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
 /* AnalysisResult.css - Modern, readable, and responsive analysis result styles */
 
 .analysis-root {

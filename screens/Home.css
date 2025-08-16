@@ -1,3 +1,67 @@
+/* Sticky Counter Card Styles & Mobile Slide Animations */
+.sticky-counter-card {
+  position: fixed;
+  top: 38px;
+  right: 32px;
+  z-index: 100;
+  width: 220px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(31,38,135,0.10);
+  border: 2.5px solid #a18cd1;
+  padding: 22px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.5s cubic-bezier(.4,1.4,.6,1), opacity 0.5s;
+}
+
+@media (max-width: 700px) {
+  .sticky-counter-card {
+    top: 16px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 96vw;
+    max-width: 340px;
+    border-radius: 14px;
+    padding: 14px 8px 12px 8px;
+    box-shadow: 0 2px 12px #b3c0d81a;
+  }
+  .sticky-counter-card.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .sticky-counter-card.slide-out {
+    transform: translateX(120vw);
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+@media (max-width: 600px) {
+  .home-title {
+    font-size: 1.6rem;
+    padding: 0 2vw;
+  }
+  .home-subtitle {
+    font-size: 1rem;
+    padding: 0 2vw;
+  }
+  .home-hero {
+    padding: 32px 4vw 16px 4vw;
+  }
+  .home-features {
+    flex-direction: column;
+    gap: 18px;
+    padding: 12px 2vw 12px 2vw;
+  }
+  .feature-card {
+    width: 95vw;
+    min-width: unset;
+    padding: 18px 10px 18px 10px;
+  }
+}
 /* Home.css - Modern Awwwards-inspired homepage styles */
 
 .home-root {

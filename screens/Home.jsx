@@ -31,6 +31,9 @@ const features = [
 function Home() {
   const navigate = useNavigate();
   const [analysisCount, setAnalysisCount] = useState(0);
+  const [showMobileCard, setShowMobileCard] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 700);
+
   useEffect(() => {
     // Sync with localStorage
     let count = Number(localStorage.getItem('analysisCount') || '0');
@@ -41,36 +44,40 @@ function Home() {
       setAnalysisCount(c);
     };
     window.addEventListener('storage', onStorage);
-    return () => window.removeEventListener('storage', onStorage);
+    // Listen for resize to detect mobile
+    const onResize = () => setIsMobile(window.innerWidth <= 700);
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('storage', onStorage);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      setShowMobileCard(true);
+      const timer = setTimeout(() => setShowMobileCard(false), 5000);
+      return () => clearTimeout(timer);
+    } else {
+      setShowMobileCard(true);
+    }
+  }, [isMobile]);
+
   return (
     <div className="home-root">
       <header className="home-hero" style={{display:'flex',flexDirection:'column',alignItems:'center',position:'relative'}}>
-        {/* Sticky Counter Card on right */}
-        <div style={{
-          position: 'fixed',
-          top: 38,
-          right: 32,
-          zIndex: 100,
-          width: 220,
-          background: '#fff',
-          borderRadius: 18,
-          boxShadow: '0 4px 24px 0 rgba(31,38,135,0.10)',
-          border: '2.5px solid #a18cd1',
-          padding: '22px 18px 18px 18px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 10,
-        }}>
-          <Counter count={analysisCount} max={1000} />
-          <div style={{fontWeight:600, fontSize:'1.08rem', color:'#222', textAlign:'center', marginTop:4}}>Free Startup Analysis</div>
-          <div style={{fontSize:'0.98rem', color:'#666', textAlign:'center', marginBottom:6}}>
-            {analysisCount}/1000 analyses left!<br/>
-            <span style={{color:'#a18cd1'}}>Get your startup reviewed for free.<br/>No credit card needed.</span>
+        {/* Sticky Counter Card: slide in/out on mobile, always visible on desktop */}
+        {(!isMobile || showMobileCard) && (
+          <div className={`sticky-counter-card${isMobile ? (showMobileCard ? ' slide-in' : ' slide-out') : ''}`}>
+            <Counter count={analysisCount} max={1000} />
+            <div style={{fontWeight:600, fontSize:'1.08rem', color:'#222', textAlign:'center', marginTop:4}}>Free Startup Analysis</div>
+            <div style={{fontSize:'0.98rem', color:'#666', textAlign:'center', marginBottom:6}}>
+              {analysisCount}/1000 analyses left!<br/>
+              <span style={{color:'#a18cd1'}}>Get your startup reviewed for free.<br/>No credit card needed.</span>
+            </div>
+            <img src="https://i.imgflip.com/4/4t0m5.jpg" alt="Meme" style={{width: '90%', borderRadius: 10, marginTop: 4, boxShadow: '0 2px 8px #b3c0d81a'}} />
           </div>
-          <img src="https://i.imgflip.com/4/4t0m5.jpg" alt="Meme" style={{width: '90%', borderRadius: 10, marginTop: 4, boxShadow: '0 2px 8px #b3c0d81a'}} />
-        </div>
+        )}
         <h1 className="home-title">Discover the Best Startup Tools & Analysis</h1>
         <p className="home-subtitle">A curated platform for founders and innovators. Analyze your idea, validate your market, and outsmart the competition with data-driven insights. <span style={{color:'#a18cd1'}}>Inspired by the world’s best digital products.</span></p>
         <button className="home-cta" onClick={() => navigate('/start/mvp')}>Get Started</button>
