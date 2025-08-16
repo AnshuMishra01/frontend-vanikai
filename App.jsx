@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import MVPMarketAnalysis from './frontend-vanikai/screens/MVPMarketAnalysis';
-import MarketDetails from './frontend-vanikai/screens/MarketDetails';
-import CompetitiveAnalysis from './frontend-vanikai/screens/CompetitiveAnalysis';
-import AnalysisResult from './frontend-vanikai/screens/AnalysisResult';
-import Home from './frontend-vanikai/screens/Home';
-import QAFlow from './frontend-vanikai/screens/QAFlow';
-import LoadingScreen from './frontend-vanikai/screens/LoadingScreen';
+import MVPMarketAnalysis from './screens/MVPMarketAnalysis';
+import MarketDetails from './screens/MarketDetails';
+import CompetitiveAnalysis from './screens/CompetitiveAnalysis';
+import AnalysisResult from './screens/AnalysisResult';
+import Home from './screens/Home';
+import QAFlow from './screens/QAFlow';
+import LoadingScreen from './screens/LoadingScreen';
 import Navbar from './Navbar';
 
 

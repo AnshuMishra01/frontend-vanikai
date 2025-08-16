@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { submitAnalysis } from '../../api';
+import { submitAnalysis } from '../api';
 
 const loadingTexts = [
   'Analyzing your answers...'

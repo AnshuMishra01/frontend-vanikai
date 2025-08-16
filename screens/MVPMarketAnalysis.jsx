@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { submitAnalysis } from '../../api';
+import { submitAnalysis } from '../api';
 import { useNavigate } from 'react-router-dom';
 
 
