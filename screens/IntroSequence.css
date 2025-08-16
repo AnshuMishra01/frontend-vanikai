@@ -1,0 +1,34 @@
+.intro-sequence-root {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg, #f8fafc 0%, #a18cd1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.6s;
+}
+
+.intro-sequence-word {
+  font-size: 5.2rem;
+  font-weight: 900;
+  color: #a18cd1;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 16px #fff8, 0 1.5px 6px #a18cd133;
+  animation: introWordFade 0.9s cubic-bezier(.4,1.4,.6,1);
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .intro-sequence-word {
+    font-size: 3.2rem;
+  }
+}
+
+@keyframes introWordFade {
+  0% { opacity: 0; transform: scale(0.95) translateY(30px); }
+  60% { opacity: 1; transform: scale(1.05) translateY(0); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
