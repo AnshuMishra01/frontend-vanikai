@@ -1,0 +1,86 @@
+/* AnalysisResult.css - Modern, readable, and responsive analysis result styles */
+
+.analysis-root {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #f8fafc 0%, #e3e6f3 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.analysis-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.analysis-type {
+  font-size: 1.08rem;
+  color: #0078d4;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.analysis-content {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.analysis-content h3, .analysis-content h4, .analysis-content h5 {
+  color: #0078d4;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+.analysis-content strong, .analysis-content b {
+  color: #005fa3;
+}
+.analysis-content ul, .analysis-content ol {
+  margin-left: 18px;
+  margin-bottom: 12px;
+}
+.analysis-content code {
+  background: #e6eaf1;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.98em;
+}
+
+.analysis-main-card {
+  width: 100%;
+  max-width: 900px;
+  margin: 56px auto 32px auto;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 40px #b3c0d81a, 0 2px 8px #b3c0d81a;
+  padding: 48px 40px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.analysis-section-card {
+  background: #f8fafc;
+  border-radius: 14px;
+  box-shadow: 0 1.5px 6px #b3c0d81a;
+  padding: 32px 28px 26px 28px;
+  margin-bottom: 32px;
+  font-size: 1.08rem;
+  color: #222;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+@media (max-width: 800px) {
+  .analysis-root {
+    max-width: 98vw;
+    padding: 16px 4vw 24px 4vw;
+  }
+}
